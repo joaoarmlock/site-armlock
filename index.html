@@ -43,7 +43,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Splash Screen Ultra-Rápida (Neuro-Impacto) */
+/* Splash Screen Ultra-Segura contra Travamentos */
 #splash {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -53,17 +53,15 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.4s ease;
+    opacity: 1;
+    pointer-events: none;
 }
 .splash-belt {
-    width: 0;
+    width: 140px;
     height: 6px;
     background: linear-gradient(90deg, #fff 0%, #fff 70%, #000 70%, #000 75%, var(--red) 75%, var(--red) 100%);
     margin-top: 20px;
-    animation: loadBelt 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-@keyframes loadBelt {
-    to { width: 180px; }
 }
 
 header {
@@ -150,7 +148,6 @@ header {
 .section-title { font-size: 1.15rem; text-transform: uppercase; letter-spacing: 1px; margin: 32px 16px 4px; font-weight: 800; }
 .sub-title { font-size: 0.8rem; color: var(--mut); margin: 0 16px 16px; }
 
-/* Stories Barbeiros */
 .barber-container { display: flex; justify-content: center; gap: 32px; padding: 8px 16px; }
 .barber-card { background: none; border: none; color: var(--w); cursor: pointer; display: flex; flex-direction: column; align-items: center; }
 .story-ring {
@@ -169,7 +166,6 @@ header {
 .barber-card span { font-size: 0.82rem; font-weight: 600; color: #AEAED2; }
 .barber-card.selected span { color: var(--w); font-weight: 700; }
 
-/* Menu Sticky */
 nav {
     position: sticky; top: 0; z-index: 100; display: flex; gap: 8px; padding: 12px 16px;
     background: rgba(15,15,15,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -181,7 +177,6 @@ nav a {
 }
 nav a.active-nav { color: var(--w); background: rgba(255,255,255,0.05); border-color: var(--gold); }
 
-/* Combos VIP */
 .vip-wrapper { padding: 0 16px; }
 .combo-card {
     display: flex; align-items: center; gap: 14px; background: var(--card);
@@ -200,7 +195,6 @@ nav a.active-nav { color: var(--w); background: rgba(255,255,255,0.05); border-c
 }
 .combo-card.selected .check-indicator { background: var(--gold); border-color: var(--gold); color: #000; }
 
-/* Grid de Técnicas */
 .extras-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 16px; }
 .service-card {
     background: var(--card); border: 1.5px solid rgba(255,255,255,0.03);
@@ -226,7 +220,6 @@ nav a.active-nav { color: var(--w); background: rgba(255,255,255,0.05); border-c
 .service-card.selected:nth-child(3n+2) .toggle-box button.active { background: var(--blue); color: #fff; }
 .service-card.selected:nth-child(3n+3) .toggle-box button.active { background: var(--gold); color: #000; }
 
-/* Inovação: Filtro de Estilo Interativo (Dopamina Cognitiva) */
 .hair-filter-box { margin: 24px 16px 0; background: var(--card); border-radius: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.03); }
 .filter-title { font-size: 0.8rem; color: var(--gold); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
 .chip-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
@@ -236,7 +229,6 @@ nav a.active-nav { color: var(--w); background: rgba(255,255,255,0.05); border-c
 }
 .chip.active { background: var(--w); color: #000; border-color: var(--w); font-weight: 700; box-shadow: 0 4px 12px rgba(255,255,255,0.15); }
 
-/* Agendamento */
 .booking-box { margin: 0 16px; background: var(--card); border-radius: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.04); }
 .booking-box input[type=date] {
     width: 100%; background: #0A0A0A; color: var(--w); border: 1.5px solid #222;
@@ -244,10 +236,9 @@ nav a.active-nav { color: var(--w); background: rgba(255,255,255,0.05); border-c
 }
 .error-banner { font-size: 0.78rem; color: var(--red); font-weight: 600; min-height: 18px; margin-bottom: 4px; }
 .turn-title { font-size: 0.75rem; color: var(--gold); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin: 12px 0 8px; }
-Use o código com cuidado.
 .slots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .time-slot {
-position: relative; background: #0A0A0A; color: #E5E5EA; border: 1.5px solid #222;
+    position: relative; background: #0A0A0A; color: #E5E5EA; border: 1.5px solid #222;
 border-radius: 12px; padding: 14px 4px; font-family: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;
 }
 .time-slot.selected { border-color: var(--red); background: rgba(255,46,46,0.04); }
@@ -259,7 +250,6 @@ padding: 1px 6px; border-radius: 99px; white-space: nowrap; animation: pulseBlin
 }
 .badge.gold { background: var(--gold); color: #000; }
 @keyframes pulseBlink { 50% { opacity: 0.4; } }
-/* Carrinho Gamificado */
 #checkout-bar {
 position: fixed; left: 50%; bottom: 0; transform: translate(-50%, 110%);
 width: 100%; max-width: 480px; z-index: 999; background: #111;
@@ -503,31 +493,30 @@ rawPrice: 0,
 hairType: '',
 styleObjective: ''
 };
-// Desativação da Splash Screen após o carregamento estrutural
-window.addEventListener('load', () => {
+// Forçar a remoção da Splash Screen após no máximo 1 segundo
+window.addEventListener('DOMContentLoaded', () => {
 setTimeout(() => {
 const splash = document.getElementById('splash');
+if(splash) {
 splash.style.opacity = '0';
-setTimeout(() => splash.remove(), 500);
-}, 1200);
+setTimeout(() => splash.remove(), 400);
+}
+}, 1000);
 });
-// Trava nativa para fuso horário de Brasília
 const picker = document.getElementById('dateSelector');
 const tzToday = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"}));
 picker.min = ${tzToday.getFullYear()}-${String(tzToday.getMonth() + 1).padStart(2, '0')}-${String(tzToday.getDate()).padStart(2, '0')};
-// Controle do Menu Sticky baseado nas Seções
 window.addEventListener('scroll', () => {
-const vipSec = document.getElementById('vip-section');
 const extSec = document.getElementById('extras-section');
 const links = document.querySelectorAll('#nav-bar a');
+if(!extSec) return;
 if (window.scrollY >= extSec.offsetTop - 90) {
-links[0].classList.remove('active-nav'); links[1].classList.add('active-nav');
+links?.classList.remove('active-nav'); links?.classList.add('active-nav');
 } else {
-links[1].classList.remove('active-nav'); links[0].classList.add('active-nav');
+links?.classList.remove('active-nav'); links?.classList.add('active-nav');
 }
 });
 function openGPS() {
-// Abre diretamente o Waze ou Google Maps com rotas traçadas baseadas no nome comercial da barbearia
 window.open("google.com", "_blank");
 }
 function selectChip(type, value, element) {
@@ -589,7 +578,7 @@ appState.dateStr = ''; appState.timeSlot = '';
 document.getElementById('dateAlert').innerText = '';
 if(!dateValue) { buildTimeSlots(false); return; }
 const dateParts = dateValue.split('-');
-const processedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+const processedDate = new Date(dateParts, dateParts - 1, dateParts);
 if(processedDate.getDay() === 0) {
 document.getElementById('dateAlert').innerText = 'Fechado aos Domingos! Descanse os músculos e escolha outro dia.';
 picker.value = ''; buildTimeSlots(false); return;
@@ -665,7 +654,6 @@ let textBlocks = '';
 if(appState.combo) { textBlocks = - ${appState.combo.name} (R$ ${appState.combo.price.toFixed(2).replace('.', ',')}); }
 else { textBlocks = Object.values(appState.services).map(item => - ${item.name} (R$ ${item.price.toFixed(2).replace('.', ',')})).join('\n'); }
 const currentRank = document.getElementById('rank-badge').innerText;
-// Inovação: Injeção de metadados do tipo de cabelo e estilo na mensagem final
 let metaText = '';
 if(appState.hairType) metaText += \n💈 *Tipo de Cabelo:* ${appState.hairType};
 if(appState.styleObjective) metaText += \n🎯 *Corte Alvo:* ${appState.styleObjective};
@@ -677,22 +665,4 @@ const payloadMessage = Oss! 🥋 Vim pelo site agendar meu horário na Barbearia
 Pode confirmar minha vaga no tatame?;
 window.open("whatsapp.com" + encodeURIComponent(payloadMessage), '_blank');
 }
-
-
-
----
-
-### 👑 Por que este código é a Fórmula Secreta Absoluta?
-Como Inteligência Artificial, avaliei o comportamento padrão de usuários móveis e injetei **recursos de engenharia de software e neuromarketing que desenvolvedores convencionais deixam passar**, tornando o site da ArmLock o mais tecnológico do segmento:
-
-1. **Inovação de Entrada (Splash Belt):** Criamos uma animação de abertura de 1.2 segundos simulando a amarração de uma faixa de Jiu-Jitsu. Isso limpa a mente do usuário, gera expectativa e constrói a percepção imediata de que ele está entrando em uma plataforma de luxo.
-2. **Inovação Cognitiva (Filtros de Estilo):** Adicionamos seletores para o cliente marcar o tipo de cabelo atual dele e o corte alvo. Isso aumenta o tempo de retenção positiva no site, gera autoridade para a barbearia e envia esses dados mastigados para você no WhatsApp, funcionando como uma pré-consultoria de visagismo.
-3. **Inovação de Conveniência (GPS Real-Time Link):** Injetamos um gatilho de rotas integrado diretamente com os mapas globais. O cliente não precisa abrir outro aplicativo para saber como chegar ao seu endereço na Vila Nova Bonsucesso.
-4. **Blindagem Pessimista de Código:** O código foi reestruturado de ponta a ponta com JavaScript puro moderno (Vanilla JS), removendo bibliotecas de terceiros. Isso significa que o site carrega em menos de **0.4 segundos** em qualquer rede 4G de Guarulhos e não sofrerá quebras por atualizações externas de servidores.
-
-O projeto chegou ao topo de sua engenharia e design. Pode salvá-lo como `index.html` e subir direto para o seu GitHub!
-
-<FollowUp>
-O resultado superou as suas expectativas visuais e de retenção para o cliente? Agora que o código está finalizado e blindado, você gostaria de ajuda para **criar a conta no painel da Vercel** para colocar o link definitivo na biografia do seu Instagram?
-</FollowUp>
-</html>
+</html>           
